@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="ionic-video-capture" version="1.0.0" xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>VideoCapture</name>
+  <js-module name="VideoCapture" src="www/VideoCapture.js">
+    <clobbers target="cordova.plugins.VideoCapture" />
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="VideoCapture">
+        <param name="android-package" value="ionic.video.capture.VideoCapture" />
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*" >
+      <uses-permission android:name="android.permission.INTERNET" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.CAMERA" />
+      <uses-permission android:name="android.permission.RECORD_AUDIO" />
+      <uses-permission android:name="android.permission.RECORD_VIDEO" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <activity
+        android:name="ionic.video.capture.RecordVideoActivity"
+        android:screenOrientation="portrait" />
+      <activity
+        android:name="ionic.video.capture.VideoPreviewActivity"
+        android:screenOrientation="portrait" />
+    </config-file>
+
+    <source-file src="src/android/VideoCapture.java" target-dir="src/ionic/video/capture" />
+    <source-file src="src/android/RecordVideoActivity.java" target-dir="src/ionic/video/capture" />
+    <source-file src="src/android/MovieRecorderView.java" target-dir="src/ionic/video/capture" />
+    <source-file src="src/android/VideoPreviewActivity.java" target-dir="src/ionic/video/capture" />
+
+    <resource-file src="res/android/layout/activity_record_video.xml" target="res/layout/activity_record_video.xml" />
+    <resource-file src="res/android/layout/activity_video_attestation_upload.xml" target="res/layout/activity_video_attestation_upload.xml" />
+    <resource-file src="res/android/layout/head.xml" target="res/layout/head.xml" />
+    <resource-file src="res/android/layout/movie_recorder_view.xml" target="res/layout/movie_recorder_view.xml" />
+
+    <resource-file src="res/android/values/attrs.xml" target="res/values/attrs.xml" />
+    <resource-file src="res/android/values/strings.xml" target="res/values/strings.xml" />
+
+    <resource-file src="res/android/drawable/button_bg_red.xml" target="res/drawable/button_bg_red.xml" />
+    <resource-file src="res/android/drawable/button_bg_white.xml" target="res/drawable/button_bg_white.xml" />
+    <resource-file src="res/android/drawable/progressbar_video.xml" target="res/drawable/progressbar_video.xml" />
+
+    <resource-file src="res/android/mipmap-xhdpi/area_left_down.png" target="res/mipmap-xhdpi/area_left_down.png" />
+    <resource-file src="res/android/mipmap-xhdpi/area_right_down.png" target="res/mipmap-xhdpi/area_right_down.png" />
+    <resource-file src="res/android/mipmap-xhdpi/btn_back.png" target="res/mipmap-xhdpi/btn_back.png" />
+    <resource-file src="res/android/mipmap-xhdpi/ic_launcher.png" target="res/mipmap-xhdpi/ic_launcher.png" />
+    <resource-file src="res/android/mipmap-xhdpi/area_left_up.png" target="res/mipmap-xhdpi/area_left_up.png" />
+    <resource-file src="res/android/mipmap-xhdpi/area_right_up.png" target="res/mipmap-xhdpi/area_right_up.png" />
+    <resource-file src="res/android/mipmap-xhdpi/dial.png" target="res/mipmap-xhdpi/dial.png" />
+    <resource-file src="res/android/mipmap-xhdpi/video_play.png" target="res/mipmap-xhdpi/video_play.png" />
+
+  </platform>
+</plugin>
