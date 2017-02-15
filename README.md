@@ -10,21 +10,15 @@ Apache Cordova Plugin video-capture
 
 ## Build 
 
-### in build.gradle add 
-1
+### 在 build.gradle 中添加
 ```
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
-    // SUB-PROJECT DEPENDENCIES START
-    debugCompile project(path: "CordovaLib", configuration: "debug")
-    releaseCompile project(path: "CordovaLib", configuration: "release")
-    // SUB-PROJECT DEPENDENCIES END
     compile 'com.android.support:support-v4:20.0.0'
     compile 'com.android.support:support-annotations:22.2.0'
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
-2
+### 替换包名
 ```
 import com.ionicframework.video202440.R;
 ```
